@@ -1,0 +1,31 @@
+     31      23      15      7      0
+CAR: XXXXXXXXXXXXXXXXXXXXXXXENNTTTTAM
+CDR: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+M: marked by GC
+A: atom
+  1: atom
+  0: pair
+TTTT: atom type
+  0000: Symbol		cdr: pointer to c-string
+  0001: Char		cdr: unicode codepoint
+  0010: Vector		car: num elements; cdr: pointer to first element
+x 0011: Lambda		cdr: (params (expression ...) env)
+  0100: Prim		cdr: pointer to c-function
+  0101: Number		N: number type; E: exactness; cdr: number
+  0110: String		car: length; cdr: pointer to c-string
+  0111: Port		car: fd
+  1000: Special
+  1001: Free
+
+Vector
+  init: 	()
+
+Special constants:
+  empty		()
+  true		#t
+  false		#f
+
+- block of 1024 objects
+- growing array of pointers to blocks
+- freelist
